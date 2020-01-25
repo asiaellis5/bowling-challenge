@@ -15,5 +15,11 @@ describe('ScoreCard', function() {
     it('adds the two scores per frame', function(){
       expect(scoreCard.frame(2, 6)).toEqual(8)
     })
+
+    it('adds the frame score to the total score', function() {
+      scoreCard.frame(2,4)
+      scoreCard.addScore(2,4)
+      expect(scoreCard.score).toEqual(6)
+    })
   })
 })

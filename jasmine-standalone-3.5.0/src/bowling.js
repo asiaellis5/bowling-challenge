@@ -8,6 +8,10 @@ ScoreCard.prototype.currentScore = function() {
   return this.score;
 }
 
-ScoreCard.prototype.frame = function(one, two) {
-  return one + two;
+ScoreCard.prototype.frame = function(ballOne, ballTwo) {
+  return ballOne + ballTwo;
+}
+
+ScoreCard.prototype.addScore = function(scoreOne, scoreTwo) {
+  this.score += (this.frame(scoreOne, scoreTwo));
 }
