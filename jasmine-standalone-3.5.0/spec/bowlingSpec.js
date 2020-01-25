@@ -7,9 +7,9 @@ describe('ScoreCard', function() {
     scorecard = new ScoreCard()
   })
 
-  describe('', function() {
-    it('', function() {
-      
+  describe('score', function() {
+    it('starts a game with a score of 0', function() {
+      expect(scorecard.currentScore()).toEqual(0)
     })
   })
 })
