@@ -7,3 +7,7 @@ var ScoreCard = function() {
 ScoreCard.prototype.currentScore = function() {
   return this.score;
 }
+
+ScoreCard.prototype.frame = function(one, two) {
+  return one + two;
+}
