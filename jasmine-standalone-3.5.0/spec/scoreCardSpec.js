@@ -29,7 +29,7 @@ describe('ScoreCard', function() {
     scoreCard.play(6, 2)
     expect(scoreCard.currentRound()).toEqual(4)
     expect(scoreCard.game[3].ballOne).toEqual(6)
-    console.log(scoreCard.game)
+    expect(scoreCard.game[2].ballOne).toEqual(4)
   })
 
   it('adds the frame score', function() {
@@ -40,7 +40,7 @@ describe('ScoreCard', function() {
   it('adds the frame scores', function(){
     scoreCard.play(5, 4)
     scoreCard.play(6, 2)
-    expect(scoreCard.currentScore()).toEqual(17)
+    expect(scoreCard.score()).toEqual(17)
   })
 
   it('it evaluates if its a spare', function() {
@@ -57,7 +57,19 @@ describe('ScoreCard', function() {
     for(var i = 0; i < 10; i++) {
       scoreCard.play(0, 0)
     }
-    expect(scoreCard.score).toEqual(0)
+    expect(scoreCard.score()).toEqual(0)
+  })
+
+  it('calculates the score with a spare', function() {
+    scoreCard.play(5, 5)
+    scoreCard.play(3, 6)
+    expect(scoreCard.score()).toEqual(22)
+  })
+
+  it('calculates the score with a strike', function() {
+    scoreCard.play(10, 0)
+    scoreCard.play(3, 4)
+    expect(scoreCard.score()).toEqual(24)
   })
 
 
